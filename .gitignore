@@ -1,0 +1,174 @@
+# ============================================
+# GERAL
+# ============================================
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*~
+.idea/
+.vscode/
+*.sublime-*
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+!.env.example
+
+# ============================================
+# DJANGO / PYTHON
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtualenv
+venv/
+ENV/
+env/
+.venv/
+pyvenv.cfg
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+/media/
+/staticfiles/
+/static/
+/static_root/
+/logs/
+
+# Django migrations (opcional - descomente se quiser ignorar)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Coverage / testes
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# ============================================
+# NEXT.JS / REACT (WEB)
+# ============================================
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+.next/
+out/
+build/
+dist/
+
+# Produção
+.vercel
+
+# Testes
+coverage/
+.nyc_output/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# ESLint / Prettier (cache)
+.eslintcache
+.prettiercache
+
+# ============================================
+# REACT NATIVE
+# ============================================
+# Build
+android/app/build/
+android/build/
+android/.gradle/
+android/gradle/
+android/local.properties
+android/.idea/
+android/app/release/
+android/app/debug/
+android/captures/
+android/.cxx/
+ios/build/
+ios/Pods/
+ios/DerivedData/
+ios/.xcode.env.local
+ios/*.xcworkspace/xcuserdata/
+ios/*.xcodeproj/xcuserdata/
+*.hprof
+*.jks
+*.keystore
+!debug.keystore
+*.mobileprovision
+
+# Expo (se estiver usando)
+.expo/
+.expo-shared/
+web-build/
+
+# React Native
+*.jsbundle
+.metro-health-check*
+react-native.config.js.bak
+
+# Bundle
+ios/main.jsbundle
+ios/Assets.xcassets/
+
+# ============================================
+# OS / EDITORES
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# DOCKER (opcional)
+# ============================================
+# .docker/
+# docker-compose.override.yml
