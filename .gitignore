@@ -1,29 +1,66 @@
-# ============================================
-# GERAL
-# ============================================
+# ============================================================
+
+# ACOLHE - Git Ignore
+
+# ============================================================
+
+# ------------------------------------------------------------
+
+# Operating System
+
+# ------------------------------------------------------------
+
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
-*.log
-*.swp
-*~
+
+# ------------------------------------------------------------
+
+# IDE / Editors
+
+# ------------------------------------------------------------
+
 .idea/
 .vscode/
-*.sublime-*
-.env
-.env.local
-.env.*.local
-.env.development
-.env.production
-.env.test
-!.env.example
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+*.sublime-project
 
-# ============================================
-# DJANGO / PYTHON
-# ============================================
-__pycache__/
+# ------------------------------------------------------------
+
+# Environment / Secrets
+
+# ------------------------------------------------------------
+
+.env
+.env.*
+!.env.example
+!.env.template
+
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# ------------------------------------------------------------
+
+# Python
+
+# ------------------------------------------------------------
+
+**pycache**/
 *.py[cod]
 *$py.class
+
 *.so
+
 .Python
 build/
 develop-eggs/
@@ -31,144 +68,288 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
 var/
 wheels/
+
+pip-wheel-metadata/
+share/python-wheels/
+
 *.egg-info/
 .installed.cfg
 *.egg
+
 MANIFEST
 
-# Virtualenv
-venv/
-ENV/
-env/
+# Virtual environments
+
 .venv/
-pyvenv.cfg
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
 
-# Django
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-/media/
-/staticfiles/
-/static/
-/static_root/
-/logs/
+# Python tooling
 
-# Django migrations (opcional - descomente se quiser ignorar)
-# */migrations/*.py
-# !*/migrations/__init__.py
-
-# Coverage / testes
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .coverage
 .coverage.*
 htmlcov/
-.pytest_cache/
 .tox/
 .nox/
-coverage.xml
-*.cover
-.hypothesis/
 
-# Celery
-celerybeat-schedule
-celerybeat.pid
+# Jupyter
 
-# ============================================
-# NEXT.JS / REACT (WEB)
-# ============================================
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------
+
+# Django
+
+# ------------------------------------------------------------
+
+*.log
+local_settings.py
+
+db.sqlite3
+db.sqlite3-journal
+
+media/
+staticfiles/
+
+# Django migration conflicts / temporary files
+
+*.pyc
+
+# ------------------------------------------------------------
+
+# Node / Next.js / JavaScript
+
+# ------------------------------------------------------------
+
 node_modules/
-.pnp
-.pnp.js
+.npm/
+.pnpm-store/
+.yarn/
+.yarn-cache/
+.yarn-integrity
 
-# Build
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js
+
 .next/
 out/
-build/
+
+# Vite / build output
+
 dist/
-
-# Produção
-.vercel
-
-# Testes
-coverage/
-.nyc_output/
+build/
 
 # TypeScript
+
 *.tsbuildinfo
-next-env.d.ts
 
-# ESLint / Prettier (cache)
-.eslintcache
-.prettiercache
+# ------------------------------------------------------------
 
-# ============================================
-# REACT NATIVE
-# ============================================
-# Build
-android/app/build/
-android/build/
-android/.gradle/
-android/gradle/
-android/local.properties
-android/.idea/
-android/app/release/
-android/app/debug/
-android/captures/
-android/.cxx/
-ios/build/
-ios/Pods/
-ios/DerivedData/
-ios/.xcode.env.local
-ios/*.xcworkspace/xcuserdata/
-ios/*.xcodeproj/xcuserdata/
-*.hprof
-*.jks
-*.keystore
-!debug.keystore
-*.mobileprovision
+# Mobile
 
-# Expo (se estiver usando)
-.expo/
-.expo-shared/
-web-build/
+# ------------------------------------------------------------
 
 # React Native
-*.jsbundle
+
+.expo/
+.expo-shared/
 .metro-health-check*
-react-native.config.js.bak
 
-# Bundle
-ios/main.jsbundle
-ios/Assets.xcassets/
+# Android
 
-# ============================================
-# OS / EDITORES
-# ============================================
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-._*
+.gradle/
+local.properties
+*.apk
+*.aab
+*.apks
+*.dex
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
+android/.cxx/
+android/app/build/
+android/app/release/
+android/app/debug/
+android/app/.cxx/
 
-# Linux
+# iOS
+
+Pods/
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcuserdatad/
+*.xcuserstate
+
+ios/build/
+ios/Pods/
+
+# Fastlane
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# ------------------------------------------------------------
+
+# Testing / Coverage
+
+# ------------------------------------------------------------
+
+coverage/
+.nyc_output/
+junit.xml
+test-results/
+playwright-report/
+blob-report/
+cypress/videos/
+cypress/screenshots/
+
+# ------------------------------------------------------------
+
+# Build / Temporary Files
+
+# ------------------------------------------------------------
+
+tmp/
+temp/
+.cache/
+.parcel-cache/
+.turbo/
+.vercel/
+serverless/
+
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# ------------------------------------------------------------
+
+# Logs
+
+# ------------------------------------------------------------
+
+*.log
+logs/
+
+# ------------------------------------------------------------
+
+# Databases
+
+# ------------------------------------------------------------
+
+*.sqlite
+*.sqlite3
+*.db
+
+# ------------------------------------------------------------
+
+# Docker
+
+# ------------------------------------------------------------
+
+docker-data/
+docker-volumes/
+
+# Local Docker overrides
+
+docker-compose.override.yml
+docker-compose.local.yml
+
+# ------------------------------------------------------------
+
+# Infrastructure / Terraform
+
+# ------------------------------------------------------------
+
+.terraform/
+.terraform.lock.hcl
+
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ------------------------------------------------------------
+
+# Cloud / Deployment
+
+# ------------------------------------------------------------
+
+.aws/
+.gcloud/
+.azure/
+
+# ------------------------------------------------------------
+
+# Local AI / Model Files
+
+# ------------------------------------------------------------
+
+models/
+*.bin
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# ------------------------------------------------------------
+
+# Generated documentation / exports
+
+# ------------------------------------------------------------
+
+*.pdf
+*.docx
+*.xlsx
+
+# ------------------------------------------------------------
+
+# Personal / Local files
+
+# ------------------------------------------------------------
+
+.local/
+.local.*
+private/
+secrets/
+credentials/
+
+# ------------------------------------------------------------
+
+# OS / Editor backup files
+
+# ------------------------------------------------------------
+
 *~
-.directory
-.Trash-*
+*.orig
+*.rej
 
-# ============================================
-# DOCKER (opcional)
-# ============================================
-# .docker/
-# docker-compose.override.yml
+# ------------------------------------------------------------
+
+# Keep examples and templates
+
+# ------------------------------------------------------------
+
+!.env.example
+!.env.template
